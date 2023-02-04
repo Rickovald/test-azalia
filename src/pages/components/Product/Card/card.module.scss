@@ -1,0 +1,65 @@
+@import "@/styles/functions.scss";
+
+.card {
+    width: 175px;
+    height: 40px;
+    background: #F5F5F7;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    &__button {
+        width: 100px;
+        height: 100%;
+        border-radius: 20px;
+        color: white;
+        font-size: 13px;
+        background-color: #4056A1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        position: absolute;
+        left: 0;
+        transition: .2s ease-in-out;
+        z-index: 2;
+    }
+    &__active {
+        width: 100%;
+        background-color: #00B177;
+    }
+    &__counters {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;    
+    }
+    &__minus, &__plus {
+        cursor: pointer;
+        opacity: 0.3;
+        background: #2E2E33;
+    }
+    &__minus {
+        height: 2px;
+        width: 10px;
+    }
+    &__plus {
+        height: 2px;
+        width: 10px;
+        &:after {
+            content: "";
+            transform: rotate(90deg);
+            height: 2px;
+            width: 10px;
+            background: #2E2E33;
+            display: block;
+        }
+    }
+    &__count {
+        margin: 0 5px;
+        font-size: 12px;
+        opacity: 0.8;
+        color: #2E2E33;
+    }
+}

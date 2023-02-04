@@ -1,11 +1,27 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import s from '@/styles/Home.module.scss'
+import { useState, useEffect } from 'react'
+import AllForWork from './components/AllForWork/AllForWork'
+import { IProduct } from '@/interfaces/interfaces'
+import Product from './components/Product/Product'
 
-const inter = Inter({ subsets: ['latin'] })
+
 
 export default function Home() {
+  const [data, setData] = useState<IProduct[]>([])
+  const [isLoading, setLoading] = useState(false)
+
+  useEffect(() => {
+    setLoading(true)
+    fetch('https://fakestoreapi.com/products')
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data)
+        setLoading(false)
+      })
+  }, [])
+  
   return (
     <>
       <Head>
@@ -14,8 +30,22 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        
+      <main className={s.main}>
+
+        <div className={s.content}>
+          <AllForWork />
+          {data
+            ? data.map((product: IProduct) => {
+              return (
+                <div key={product.id}>
+                  <Product {...product}/>
+                </div>
+              )
+            })
+            : ""
+          }
+        </div>
+
       </main>
     </>
   )

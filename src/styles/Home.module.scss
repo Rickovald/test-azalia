@@ -1,0 +1,14 @@
+@import "./functions.scss";
+
+.main {
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+.content {
+  display: flex;
+  gap: toRem(30);
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+}

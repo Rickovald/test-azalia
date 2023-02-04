@@ -1,0 +1,24 @@
+@import "@/styles/functions.scss";
+
+.favourites {
+    width: toRem(40);
+    height: toRem(40);
+    position: relative;
+    &__unfav, &__fav {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+    &__unfav {
+        z-index: 1;
+        transition: .2s ease-in-out;
+    }
+    &__fav {
+        z-index: 0;
+    }
+    &__transparent {
+        opacity: 0;
+        transition: .2s ease-in-out;
+    }
+}

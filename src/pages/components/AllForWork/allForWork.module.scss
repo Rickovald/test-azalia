@@ -1,0 +1,65 @@
+@import "@/styles/functions.scss";
+
+.allfor {
+    max-width: toRem(340);
+    height: toRem(460);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &__header {
+        font-size: 28px;
+    }
+    &__content {
+        display: flex;
+    }
+    &__cab, &__peref {
+        padding: 25px;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 24px;
+        height: toRem(140);
+    }
+    &__cab {
+        background: #636B7F;
+        color: white;
+    }
+    &__peref {
+        background: #F5F5F7;
+        color: black;
+    }
+    &__discount_wrapper {
+        display: flex;
+        align-items: center;
+    }
+    &__discount1, &__discount2 {
+        background: #FFDC38;
+        padding: 3px 10px;
+        width: fit-content;
+	    -webkit-transform: skew(330deg);
+        -moz-transform: skew(330deg);
+        -o-transform: skew(330deg);
+        transform: skew(330deg);
+        p {
+            color: black;
+	        -webkit-transform: skew(-330deg);
+            -moz-transform: skew(-330deg);
+            -o-transform: skew(-330deg);
+            transform: skew(-330deg);
+        }
+    }
+    &__discount1 {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    &__discount2 {
+        margin-left: 10px;
+    }
+
+    &__choose {
+        cursor: pointer;
+        margin-top: 10px;
+        opacity: .8;
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 13px;
+    }
+}

@@ -1,0 +1,33 @@
+@import "@/styles/functions.scss";
+
+.product {
+    max-width: toRem(340);
+    height: toRem(460);
+    padding: toRem(30);
+    border: 1px solid #F5F5F7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    &__image {
+        margin: 0 auto 12px;
+        display: block;
+    }
+    &__flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__category {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        color: #999999;
+        width: fit-content;
+    }
+    &__title {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
